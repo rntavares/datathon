@@ -1,0 +1,84 @@
+{
+  "algorithm": "random_forest",
+  "version": "1.0.0",
+  "trained_at": "2026-03-27T12:58:21.639366+00:00",
+  "target_column": "Defasagem",
+  "classification_type": "binary",
+  "class_mapping": {
+    "0": "sem_risco",
+    "1": "em_risco"
+  },
+  "features": [
+    "Fase",
+    "Gênero",
+    "Ano ingresso",
+    "Pedra",
+    "Nº Av",
+    "IAA",
+    "IEG",
+    "IPS",
+    "IDA",
+    "Mat",
+    "Por",
+    "IPV",
+    "IAN",
+    "IPP",
+    "Inst_Concluiu o 3º EM",
+    "Inst_Escola JP II",
+    "Inst_Escola Pública",
+    "Inst_Nenhuma das opções acima",
+    "Inst_Privada",
+    "Inst_Privada *Parcerias com Bolsa 100%",
+    "Inst_Privada - Pagamento por *Empresa Parceira",
+    "Inst_Privada - Programa de Apadrinhamento",
+    "Inst_Privada - Programa de apadrinhamento",
+    "Inst_Pública",
+    "Inst_Rede Decisão",
+    "anos_no_programa",
+    "delta_INDE",
+    "delta_IAA",
+    "delta_IEG",
+    "delta_IPS",
+    "delta_IDA",
+    "delta_IPP",
+    "delta_IPV",
+    "delta_IAN",
+    "delta_Mat",
+    "delta_Por",
+    "delta_Ing",
+    "pedra_evolucao",
+    "ratio_IDA_IEG"
+  ],
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "cross_validation": {
+    "accuracy": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "f1_weighted": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "precision_weighted": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "recall_weighted": {
+      "mean": 1.0,
+      "std": 0.0
+    }
+  },
+  "hyperparameters": {
+    "n_estimators": 100,
+    "random_state": 42,
+    "class_weight": "balanced"
+  },
+  "training_samples": 2343,
+  "test_samples": 586,
+  "cross_validation_folds": 5
+}
