@@ -18,7 +18,9 @@ O sistema inclui:
 - Testes automatizados com cobertura mínima de 80%
 - Monitoramento de drift e dashboard
 
-**Repositório:** [AWS CodeCommit — passos-magicos-ml](https://git-codecommit.us-east-1.amazonaws.com/v1/repos/passos-magicos-ml)
+**Repositório: CORRETO** [GitHub — passos-magicos-ml](https://github.com/rntavares/datathon)
+
+**Repositório: Antigo** [AWS CodeCommit — passos-magicos-ml](https://git-codecommit.us-east-1.amazonaws.com/v1/repos/passos-magicos-ml)
 
 ## 2. Stack Tecnológica
 
