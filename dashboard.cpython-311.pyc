@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Monitoramento — Passos Mágicos ML</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            color: #333;
+            padding: 24px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.8rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+        .card .label {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin-bottom: 24px;
+        }
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        tr:hover { background: #f8f9fa; }
+        .info-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .info-item {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .info-item strong { color: #2c3e50; }
+        .placeholder-box {
+            background: #f8f9fa;
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.8rem;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Dashboard de Monitoramento</h1>
+    <p class="subtitle">Passos Mágicos ML — Predição de Risco de Defasagem Escolar</p>
+
+    <!-- Métricas do Modelo -->
+    <div class="grid">
+        <div class="card">
+            <div class="label">Accuracy</div>
+            <div class="value">100.00%</div>
+        </div>
+        <div class="card">
+            <div class="label">Precision</div>
+            <div class="value">100.00%</div>
+        </div>
+        <div class="card">
+            <div class="label">Recall</div>
+            <div class="value">100.00%</div>
+        </div>
+        <div class="card">
+            <div class="label">F1-Score</div>
+            <div class="value">100.00%</div>
+        </div>
+    </div>
+
+    <!-- Informações do Modelo -->
+    <div class="section">
+        <h2>Informações do Modelo</h2>
+        <div class="info-row">
+            <div class="info-item"><strong>Algoritmo:</strong> random_forest</div>
+            <div class="info-item"><strong>Versão:</strong> 1.0.0</div>
+            <div class="info-item"><strong>Treinado em:</strong> 2026-03-27T12:58:21.639366+00:00</div>
+        </div>
+    </div>
+
+    <!-- Detecção de Drift -->
+    <div class="section">
+        <h2>Detecção de Drift por Feature</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>p-value (KS)</th>
+                    <th>Estatística KS</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>IAA</td>
+            <td>0.9238</td>
+            <td>0.0550</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#27ae60;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Normal
+            </td>
+        </tr>
+        <tr>
+            <td>IAN</td>
+            <td>0.1421</td>
+            <td>0.1150</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#27ae60;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Normal
+            </td>
+        </tr>
+        <tr>
+            <td>IDA</td>
+            <td>0.0000</td>
+            <td>0.3750</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#e74c3c;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Drift Detectado
+            </td>
+        </tr>
+        <tr>
+            <td>IEG</td>
+            <td>0.7934</td>
+            <td>0.0650</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#27ae60;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Normal
+            </td>
+        </tr>
+        <tr>
+            <td>INDE</td>
+            <td>0.3281</td>
+            <td>0.0950</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#27ae60;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Normal
+            </td>
+        </tr>
+        <tr>
+            <td>IPP</td>
+            <td>0.3935</td>
+            <td>0.0900</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#27ae60;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Normal
+            </td>
+        </tr>
+        <tr>
+            <td>IPS</td>
+            <td>0.9878</td>
+            <td>0.0450</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#27ae60;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Normal
+            </td>
+        </tr>
+        <tr>
+            <td>IPV</td>
+            <td>0.0000</td>
+            <td>0.4450</td>
+            <td>
+                <span style="display:inline-block;width:14px;height:14px;
+                    border-radius:50%;background:#e74c3c;margin-right:6px;
+                    vertical-align:middle;"></span>
+                Drift Detectado
+            </td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Volume de Requisições (placeholder) -->
+    <div class="section">
+        <h2>Volume de Requisições</h2>
+        <div class="placeholder-box">
+            📈 Gráfico de volume de requisições será exibido aqui quando a API
+            estiver em produção com logging de métricas habilitado.
+        </div>
+    </div>
+
+    <footer>
+        Gerado em 2026-03-27 09:58:46 | Passos Mágicos ML Pipeline v1.0.0
+    </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+venv/
+app/model/*.joblib
+logs/
+*.egg-info/
+.pytest_cache/

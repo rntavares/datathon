@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[defender "bypass"]
+[remote "origin"]
+	url = https://git-codecommit.us-east-1.amazonaws.com/v1/repos/passos-magicos-ml
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
